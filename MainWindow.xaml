@@ -1,0 +1,60 @@
+﻿<mah:MetroWindow x:Class="finalb2020.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:finalb2020"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Pantalla Menu" Height="450" Width="800"
+        WindowState="Maximized">
+    <Grid>
+     <Grid.RowDefinitions>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row = "0" Grid.Column ="0" Orientation ="Horizontal"> 
+         <Menu>
+        <MenuItem Header ="Menu">
+        <MenuItem Header ="Login" IsEnabled = "{Binding IsMenuLogin}" 
+                            Command ="{Binding Instancia}"
+                            CommandParameter ="LoginView"/>
+            <MenuItem Header ="Catalogos" IsEnabled = "{Binding IsMenuCatalogo}">
+                <MenuItem Command ="{Binding Instancia}"
+                            CommandParameter = "AlumnoView"
+                            Header = "Alumno"/>
+                    <MenuItem Command ="{Binding Instancia}"
+                            CommandParameter = "CarreraTecnicaView"
+                            Header = "Carrera Técnica"/>
+                    <MenuItem Command ="{Binding Instancia}"
+                            CommandParameter = "HorarioView"
+                            Header = "Horarios"/>
+                    <MenuItem Command ="{Binding Instancia}"
+                            CommandParameter = "InstructorView"
+                            Header = "Instructores"/>
+                    <MenuItem Command ="{Binding Instancia}"
+                            CommandParameter = "ReligionView"
+                            Header = "Religiones"/>
+                    <MenuItem Command ="{Binding Instancia}"
+                            CommandParameter = "SalonView"
+                            Header = "Salones"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header = "Reportes"/>
+                            
+            <Separator />
+            <MenuItem Header = "Acerca de ....">
+            <MenuItem Command =""
+                            CommandParameter = ""
+                            Header = "pagina web"/>
+            <MenuItem Command =""
+                            CommandParameter = ""
+                            Header = "Alu"/>
+            </MenuItem>
+        </Menu>
+        </StackPanel>
+        <Image Grid.Row="1" Source="{Binding ImgFoto}" 
+        Stretch="fill"/>
+        </Grid>
+</mah:MetroWindow>
