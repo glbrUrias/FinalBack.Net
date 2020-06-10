@@ -23,8 +23,8 @@
         <DataGrid SelectedItem = "{Binding ElementoSeleccionado}" Grid.Row="0"  Grid.ColumnSpan = "2" ItemsSource = "{Binding ListaHorario}" CanUserAddRows="False" 
          ColumnWidth="*" AutoGenerateColumns = "False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding = "{Binding HorarioInicio}" Header ="Horario Inicio" IsReadOnly="true"/>
-                <DataGridTextColumn Binding = "{Binding HorarioFinal}" Header ="Horario Final" IsReadOnly="true"/>
+                <DataGridTextColumn Binding = "{Binding HorarioInicio, StringFormat='{}{0:t}'}" Header ="Horario Inicio" IsReadOnly="true"/>
+                <DataGridTextColumn Binding = "{Binding HorarioFinal, StringFormat='{}{0:t}'}" Header ="Horario Final" IsReadOnly="true"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Grid.Row = "2" Grid.Column ="0" Content="Horario Inicio"/>

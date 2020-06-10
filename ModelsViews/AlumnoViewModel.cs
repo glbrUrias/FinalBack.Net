@@ -290,14 +290,14 @@ namespace finalb2020.ModelsViews
                             this.dbContext.SaveChanges();
 
                             this.ListaAlumno.Add(this.ElementoSeleccionado);
-                            MessageBox.Show("Datos almacenados!!!");
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Alumnos","Datos Almacenados!!!");
                             this._accion = ACCION.NINGUNO;
                             UpOffBoton();
                             UpOffTxt();   
                         }
                         catch (Exception e)
                         {
-                            MessageBox.Show(e.Message);
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Alumnos",e.Message);
                             this._accion = ACCION.NINGUNO;
                             UpOffBoton();
                             UpOffTxt();
@@ -309,14 +309,14 @@ namespace finalb2020.ModelsViews
 
                             this.dbContext.Entry(this.ElementoSeleccionado).State = EntityState.Modified;
                             this.dbContext.SaveChanges();
-                            MessageBox.Show("Datos Actualizados!!!");
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Alumnos","Datos Actualizados!!!");
                             this._accion = ACCION.NINGUNO;
                             UpOffBoton();
                             UpOffTxt();
                         }
                         else
                         {
-                            MessageBox.Show("Debe Seleccionar Un Elemento.");
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Alumnos","Debe Seleccionar Un Elemento");
                             this._accion = ACCION.NINGUNO;
                             UpOffBoton();
                             UpOffTxt();

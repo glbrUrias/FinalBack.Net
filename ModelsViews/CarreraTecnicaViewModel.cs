@@ -7,6 +7,7 @@ using finalb2020.Models;
 using System.Linq;
 using System.Windows;
 using Microsoft.EntityFrameworkCore;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace finalb2020.ModelsViews
 {
@@ -15,7 +16,7 @@ namespace finalb2020.ModelsViews
     {
         private ACCION _accion =ACCION.NINGUNO;
         private FinalDbContext dbContext;
-
+        private IDialogCoordinator dialogCoordinator;
         private CarreraTecnicaViewModel _Instancia;
         public bool _IsGuardar = false;
         public bool _IsCancelar =false;
@@ -166,8 +167,9 @@ namespace finalb2020.ModelsViews
             }
         }
 
-        public CarreraTecnicaViewModel()
+        public CarreraTecnicaViewModel(IDialogCoordinator instance)
         {
+            this.dialogCoordinator = instance;
             this.dbContext = new FinalDbContext();
             this.Instancia = this;
         }
@@ -179,7 +181,7 @@ namespace finalb2020.ModelsViews
             return true;
         }
 
-        public void Execute(object parametro)//aqui hay un problema se copio codigo del profe para que jalara
+        public async void Execute(object parametro)//aqui hay un problema se copio codigo del profe para que jalara
         //porque con el codigo copidado del video "3era parte", no jalaba
         {
             if (parametro.Equals("Nuevo"))
@@ -201,7 +203,7 @@ namespace finalb2020.ModelsViews
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un elemento para Modificar.");
+                    await this.dialogCoordinator.ShowMessageAsync(this,"Carrera Tecnica","Seleccione un elemento para Modificar");
                 }
             }
             else if (parametro.Equals("Guardar"))
@@ -215,13 +217,14 @@ namespace finalb2020.ModelsViews
                             this.dbContext.SaveChanges();
 
                             this.ListaCarreraTecnica.Add(this.ElementoSeleccionado);
-                            MessageBox.Show("Datos almacenados!!!");
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Carrera Tecnica","Datos almacenados!!!");
                             this._accion=ACCION.NINGUNO;
                             UpOffBoton();
                         }
                         catch (Exception e)
                         {
                             MessageBox.Show(e.Message);
+                            //await this.dialogCoordinator.ShowMessageAsync(this,"Carrera Tecnica",e.Message);
                             this._accion=ACCION.NINGUNO;
                             UpOffBoton();
                         }
@@ -232,13 +235,13 @@ namespace finalb2020.ModelsViews
 
                             this.dbContext.Entry(this.ElementoSeleccionado).State = EntityState.Modified;
                             this.dbContext.SaveChanges();
-                            MessageBox.Show("Datos Actualizados!!!");
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Carrera Tecnica","Datos Actualizados!!!");
                             this._accion=ACCION.NINGUNO;
                             UpOffBoton();
                         }
                         else
                         {
-                            MessageBox.Show("Debe Seleccionar Un Elemento.");
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Carrera Tecnica","Debe Seleccionar Un Elemento");
                             this._accion=ACCION.NINGUNO;
                             UpOffBoton();
                         }
@@ -259,14 +262,17 @@ namespace finalb2020.ModelsViews
             {
                 if (this.ElementoSeleccionado != null)
                 {
-                    MessageBoxResult resultado = MessageBox.Show("Realmente desea eleminiar el registro",
-                    "Eliminar", MessageBoxButton.YesNo);
-                    if (resultado == MessageBoxResult.Yes)
+                     MessageDialogResult resultado = await this.dialogCoordinator.ShowMessageAsync(this,
+                    "Eliminar Carrera",
+                    "Esta Seguro de eliminar el Registro?",
+                    MessageDialogStyle.AffirmativeAndNegative);
+
+                    if (resultado == MessageDialogResult.Affirmative)
                     {
                         this.dbContext.Remove(this.ElementoSeleccionado);
                         this.dbContext.SaveChanges();
                         this.ListaCarreraTecnica.Remove(this.ElementoSeleccionado);
-                        MessageBox.Show("Elemento eliminado");
+                        await this.dialogCoordinator.ShowMessageAsync(this,"Carreras Tecnicas","Registro eliminado.");
                         this._accion = ACCION.NINGUNO;
                         UpOffBoton();
 
@@ -274,7 +280,7 @@ namespace finalb2020.ModelsViews
                 }
                 else
                 {
-                    MessageBox.Show("Debe selleccionar un elemento");
+                    await this.dialogCoordinator.ShowMessageAsync(this,"Carreras Tecnicas","Seleccione un elemento.");
                     this._accion = ACCION.NINGUNO;
                     UpOffBoton();
                 }

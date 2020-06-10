@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:finalb2020"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        Dialog:DialogParticipation.Register="{Binding}"
         mc:Ignorable="d"
         Title="Lista De Salones" Height="450" Width="800">
 <Grid>
@@ -37,11 +39,11 @@
         <TextBox Grid.Row = "4" Grid.Column ="1" Text = "{Binding ElementoSeleccionado.Capacidad}"></TextBox>
         
         <StackPanel Margin = "5" Orientation = "Horizontal" Grid.Row ="6" Grid.ColumnSpan="2">
-            <Button Margin = "5" Content ="Agregar" Command = "{Binding Instancia}" CommandParameter = "Nuevo"/>
-            <Button Margin = "5" Content ="Modificar"/>
-            <Button Margin = "5" Content ="Eliminar"/>
-            <Button Margin = "5" Content ="Guardar" Command = "{Binding Instancia}" CommandParameter = "Guardar"/>
-            <Button Margin = "5" Content ="Cancelar"/>
+            <Button IsEnabled = "{Binding IsNuevo}" Margin = "5" Content ="Agregar" Command = "{Binding Instancia}" CommandParameter = "Nuevo"/>
+            <Button IsEnabled = "{Binding IsModificar}" Margin = "5" Content ="Modificar" Command = "{Binding Instancia}" CommandParameter = "Modificar"/>
+            <Button IsEnabled = "{Binding IsEliminar}" Margin = "5" Content ="Eliminar" Command = "{Binding Instancia}" CommandParameter = "Eliminar"/>
+            <Button IsEnabled = "{Binding IsGuardar}" Margin = "5" Content ="Guardar" Command = "{Binding Instancia}" CommandParameter = "Guardar"/>
+            <Button IsEnabled = "{Binding IsCancelar}" Margin = "5" Content ="Cancelar" Command = "{Binding Instancia}" CommandParameter = "Cancelar"/>
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

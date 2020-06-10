@@ -1,6 +1,7 @@
 using System.Windows;
 using finalb2020.ModelsViews;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace finalb2020.Views
 {
@@ -10,7 +11,7 @@ namespace finalb2020.Views
         public InstructorView()
         {
             InitializeComponent();
-            model = new InstructorViewModel();
+            model = new InstructorViewModel(DialogCoordinator.Instance);
             this.DataContext=model;
         }
     }

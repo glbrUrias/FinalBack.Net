@@ -28,7 +28,7 @@ namespace finalb2020.ModelsViews
             }
         }
         private Horario _ElementoSeleccionado;
-
+    
         public Horario ElementoSeleccionado
         {
             get
@@ -81,8 +81,6 @@ namespace finalb2020.ModelsViews
               } else if( parametro.Equals("Guardar")) {
                   try
                   { 
-                      //Religion r =  this.dbContext.Religiones.Find(1); // Select * from Religiones where ReligionId = 1                      
-                      //this.ElementoSeleccionado.Religion = r;                      
                       this.dbContext.Horarios.Add(this.ElementoSeleccionado); // insert into Alumno values(...)
                       this.dbContext.SaveChanges();
                       
