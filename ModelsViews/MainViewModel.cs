@@ -96,6 +96,10 @@ namespace finalb2020.ModelsViews
             {
                 new InstructorView().ShowDialog();
             }
+            if (parameter.Equals("ClaseView"))
+            {
+                new ClaseView().ShowDialog();
+            }
             if (parameter.Equals("SalonView"))
             {
                 new SalonView().ShowDialog();

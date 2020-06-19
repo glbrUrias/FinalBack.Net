@@ -5255,11 +5255,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\urias\\Documents\\KINAL\\FINAL\\finalb2020\\finalb2020.csproj",
+      "projectUniqueName": "C:\\Users\\urias\\Documents\\KINAL\\FINALWPF\\finalb2020\\finalb2020.csproj",
       "projectName": "finalb2020",
-      "projectPath": "C:\\Users\\urias\\Documents\\KINAL\\FINAL\\finalb2020\\finalb2020.csproj",
+      "projectPath": "C:\\Users\\urias\\Documents\\KINAL\\FINALWPF\\finalb2020\\finalb2020.csproj",
       "packagesPath": "C:\\Users\\urias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\urias\\Documents\\KINAL\\FINAL\\finalb2020\\obj\\",
+      "outputPath": "C:\\Users\\urias\\Documents\\KINAL\\FINALWPF\\finalb2020\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\urias\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\urias\Documents\KINAL\FINAL\finalb2020\obj\Debug\netcoreapp3.1\
+C:\Users\urias\Documents\KINAL\FINALWPF\finalb2020\obj\Debug\netcoreapp3.1\
 finalb2020
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\urias\Documents\KINAL\FINAL\finalb2020\App.xaml
-7-787756955
+C:\Users\urias\Documents\KINAL\FINALWPF\finalb2020\App.xaml
+81740567537
 
-35311447698
-218-1865838248
-MainWindow.xaml;Views\AlumnoView.xaml;Views\CarreraTecnicaView.xaml;Views\HorarioView.xaml;Views\InstructorView.xaml;Views\LoginView.xaml;Views\SalonView.xaml;
+36-1335363194
+2182056009364
+MainWindow.xaml;Views\AlumnoView.xaml;Views\CarreraTecnicaView.xaml;Views\ClaseView.xaml;Views\HorarioView.xaml;Views\InstructorView.xaml;Views\LoginView.xaml;Views\SalonView.xaml;
 
 False
 

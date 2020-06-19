@@ -10,9 +10,9 @@ namespace finalb2020.Models
         public int ModuloId{get;set;}
 
         [ForeignKey("CarreraTecnica")]//llave foranea
-        public int CodigoCarrera { get; set; }
+        public int CarreraId { get; set; }
         // Objeto que representa la clave externa.
-        [ForeignKey("CodigoCarrera")]
+        [ForeignKey("CarreraId")]
         public virtual CarreraTecnica CarreraTecnica{get;set;}//realacion a muchos
         //que viene de alumno y clase
         

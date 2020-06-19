@@ -23,10 +23,10 @@
             <MenuItem Header ="Catalogos" IsEnabled = "{Binding IsMenuCatalogo}">
                 <MenuItem Command ="{Binding Instancia}"
                             CommandParameter = "AlumnoView"
-                            Header = "Alumno"/>
+                            Header = "Alumnos"/>
                     <MenuItem Command ="{Binding Instancia}"
                             CommandParameter = "CarreraTecnicaView"
-                            Header = "Carrera Técnica"/>
+                            Header = "Carreras Técnicas"/>
                     <MenuItem Command ="{Binding Instancia}"
                             CommandParameter = "HorarioView"
                             Header = "Horarios"/>
@@ -34,8 +34,8 @@
                             CommandParameter = "InstructorView"
                             Header = "Instructores"/>
                     <MenuItem Command ="{Binding Instancia}"
-                            CommandParameter = "ReligionView"
-                            Header = "Religiones"/>
+                            CommandParameter = "ClaseView"
+                            Header = "Clases"/>
                     <MenuItem Command ="{Binding Instancia}"
                             CommandParameter = "SalonView"
                             Header = "Salones"/>

@@ -12,9 +12,9 @@ namespace finalb2020.Models
         public int Ciclo { get; set; }
 
         [ForeignKey("CarreraTecnica")]
-        public int CodigoCarrera { get; set; }
+        public int CarreraId { get; set; }
         // Objeto que representa la clave externa.
-        [ForeignKey("CodigoCarrera")]
+        [ForeignKey("CarreraId")]
         public virtual CarreraTecnica CarreraTecnica { get; set; }//porque la tabla AsignacionAlumno tiene relacion a muchos 
         //que viene de alumno y clase
 
